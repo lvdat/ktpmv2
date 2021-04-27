@@ -1,0 +1,28 @@
+[28-Mar-2021 18:12:49 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function format() on string in /home/levandat/ktpmk46.tech/view.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/levandat/ktpmk46.tech/view.php on line 21
+[28-Mar-2021 18:13:35 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function format() on string in /home/levandat/ktpmk46.tech/view.php:22
+Stack trace:
+#0 {main}
+  thrown in /home/levandat/ktpmk46.tech/view.php on line 22
+[28-Mar-2021 18:14:37 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function format() on string in /home/levandat/ktpmk46.tech/view.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/levandat/ktpmk46.tech/view.php on line 23
+[28-Mar-2021 18:14:54 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to a member function format() on string in /home/levandat/ktpmk46.tech/view.php:23
+Stack trace:
+#0 {main}
+  thrown in /home/levandat/ktpmk46.tech/view.php on line 23
+[30-Mar-2021 17:13:08 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to undefined function getTitle() in /home/levandat/ktpmk46.tech/link.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/levandat/ktpmk46.tech/link.php on line 14
+[30-Mar-2021 17:14:25 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli::quuery() in /home/levandat/ktpmk46.tech/link.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/levandat/ktpmk46.tech/link.php on line 16
+[30-Mar-2021 17:15:05 Asia/Ho_Chi_Minh] PHP Fatal error:  Uncaught Error: Call to undefined method mysqli::quuery() in /home/levandat/ktpmk46.tech/link.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/levandat/ktpmk46.tech/link.php on line 16

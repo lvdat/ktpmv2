@@ -1,0 +1,16 @@
+RewriteEngine On
+RewriteRule ^dangnhap$ /login.php
+RewriteRule ^asset/js/login.min.js$ /asset/js/login.min.js.php
+RewriteRule ^logout$ /logout.php
+RewriteRule ^chat$ /chat.php
+RewriteRule ^view/([0-9]+)$ /view.php?id=$1
+RewriteRule ^admin/create/(.*)$ /admin/create.php?action=$1
+RewriteRule ^view$ /view.php
+RewriteRule ^profile$ /profile.php?action=view
+RewriteRule ^profile/edit$ /profile.php?action=edit
+RewriteRule ^u/(.*)$ /profile.php?action=view&mssv=$1
+RewriteRule ^profile/edit/(.*)$ /profile.php?action=edit&edit_action=$1
+RewriteRule ^go/(.*)$ /link.php?action=view&hash=$1
+
+RewriteCond %{HTTPS} !=on [NC]
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
