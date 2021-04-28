@@ -12,5 +12,5 @@ RewriteRule ^u/(.*)$ /profile.php?action=view&mssv=$1
 RewriteRule ^profile/edit/(.*)$ /profile.php?action=edit&edit_action=$1
 RewriteRule ^go/(.*)$ /link.php?action=view&hash=$1
 
-RewriteCond %{HTTPS} !=on [NC]
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# RewriteCond %{HTTPS} !=on [NC]
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]

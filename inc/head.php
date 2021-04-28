@@ -120,41 +120,41 @@ if(login()){
     <div class="container-md">
         <div class="row d-flex justify-content-center" id="row">
             <div class="col-md-3">
+                <div class="sticky">
                 <div class="card mb-2">
                     <div class="card-body text-center">
-                        <b>Tuần 10</b> | <?=date("d/m/Y | H:i:s")?>
+                        <b>Tuần <?=getoption('tuan')?></b> | <?=date("d/m/Y | H:i:s")?>
                     </div>
                 </div>
                 <div class="d-none d-md-block">
-                    <div class="sticky">
-                            <div class="card mb-2">
-                                <div class="card-header"><i class="fas fa-cogs"></i> Hệ thống</div>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><i class="fas fa-map-marker-alt"></i> IP: <?=getip()?></li>
-                                        <li class="list-group-item"><i class="fas fa-eye"></i> Lượt xem trang: <?
-                                            $CountFile = $_SERVER['DOCUMENT_ROOT']."/index.log";
-                                            $CF = fopen ($CountFile, "r");
-                                            $Views = fread ($CF, filesize ($CountFile));
-                                            fclose ($CF);
-                                            $Views++; 
-                                            $CF = fopen ($CountFile, "w");
-                                            fwrite ($CF, $Views); 
-                                            fclose ($CF); 
-                                            echo ($Views);
-                                            ?></li>
-                                        <?php
-                                            $time = microtime();
-                                            $time = explode(' ', $time);
-                                            $time = $time[1] + $time[0];
-                                            $finish = $time;
-                                            $total_time = round(($finish - $start)*100000, 2);
-                                            echo '<li class="list-group-item"><i class="fas fa-clock"></i> Thời gian load trang: '.$total_time.' ms.</li>';
-                                        ?>
-                                        <li class="list-group-item"><i class="fas fa-code-branch"></i> Version: <?=VERSION?> </li>
-                                    </ul>
-                            </div>
-                            <div id="head_addon"></div>
-                    </div>  
+                    <div class="card mb-2">
+                        <div class="card-header"><i class="fas fa-cogs"></i> Hệ thống</div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fas fa-map-marker-alt"></i> IP: <?=getip()?></li>
+                                <li class="list-group-item"><i class="fas fa-eye"></i> Lượt xem trang: <?
+                                    $CountFile = $_SERVER['DOCUMENT_ROOT']."/index.log";
+                                    $CF = fopen ($CountFile, "r");
+                                    $Views = fread ($CF, filesize ($CountFile));
+                                    fclose ($CF);
+                                    $Views++; 
+                                    $CF = fopen ($CountFile, "w");
+                                    fwrite ($CF, $Views); 
+                                    fclose ($CF); 
+                                    echo ($Views);
+                                    ?></li>
+                                <?php
+                                    $time = microtime();
+                                    $time = explode(' ', $time);
+                                    $time = $time[1] + $time[0];
+                                    $finish = $time;
+                                    $total_time = round(($finish - $start)*100000, 2);
+                                    echo '<li class="list-group-item"><i class="fas fa-clock"></i> Thời gian load trang: '.$total_time.' ms.</li>';
+                                ?>
+                                <li class="list-group-item"><i class="fas fa-code-branch"></i> Version: <?=VERSION?> </li>
+                            </ul>
+                    </div>
+                    <div id="head_addon"></div>
                 </div>
+            </div>
             </div>
             <div class="col-md-6">
