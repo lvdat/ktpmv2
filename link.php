@@ -23,7 +23,7 @@ $action = (isset($_GET['action'])) ? $_GET['action'] : 'create';
                 <input type="text" name="url" required>
                 <label>Hash link: (link có dạng ktpmk46.tech/go/hash)</label>
                 <? $hash = str_random(8); ?>
-                <input type="text" name="hash" value="<?=$hash?>" required>
+                <input type="hidden" name="hash" value="<?=$hash?>">
                 <button type="submit" name="gui" class="btn btn-success">Gửi dữ liệu</button>
             </form>
         </div>
@@ -38,27 +38,56 @@ $action = (isset($_GET['action'])) ? $_GET['action'] : 'create';
                 while($entry = mysqli_fetch_assoc($kq)){
                     echo '
                     <div class="card mb-2">
-                    <div class="card-header bg-success text-white">Đi tới liên kết gốc</div>
+                    <div class="card-header bg-success text-white"><i class="fas fa-link"></i> URL Detect</div>
                     <div class="card-body">
-                    <p class="card-text">'.$entry['name'].'</p>
-                    <p class="card-text">Liên kết gốc: '.$entry['real_url'].'</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered border-primary">
+                            <tbody>
+                                <tr>
+                                    <td width="35%"><b>Tên liên kết</b></td>
+                                    <td width="65%">'.$entry['name'].'</td>
+                                </tr>
+                                <tr>
+                                    <td width="35%"><b>Liên kết gốc</b></td>
+                                    <td width="65%"><textarea class="form-control" disabled>'.$entry['real_url'].'</textarea></td>
+                                </tr>
+                                <tr>
+                                    <td width="35%"><b>Người tạo</b></td>
+                                    <td width="65%">'.getsv($entry['author'])['name'].'</td>
+                                </tr>
+                                <tr>
+                                    <td width="35%"><b>Đã tạo vào</b></td>
+                                    <td width="65%">'.timeago($entry['time']).'</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="alert alert-primary" role="alert">
+                        Click vào nút bên dưới để đi đến liên kết ngay mà không cần chờ!
+                    </div>
                     <script>
-                        var timeleft = 4;
+                        var timeleft = 10;
+                        var myvar;
                         var downloadTimer = setInterval(function(){
                         if(timeleft <= 0){
                             clearInterval(downloadTimer);
-                            document.getElementById("countdown").innerHTML = "Đang chuyển hướng";
+                            document.getElementById("countdown").innerHTML = "Đang xử lý";
                         } else {
-                            document.getElementById("countdown").innerHTML = "Tự động chuyển sau " + timeleft + " giây";
+                            document.getElementById("countdown").innerHTML = "Tự động chuyển đến liên kết sau " + timeleft + " giây";
                         }
                         timeleft -= 1;
                         }, 1000);
-                        setTimeout(function(){
+                        function go(){
                             window.open("'.$entry['real_url'].'", "_blank");
-                        }, 5000);
+                            window.history.back();
+                            clearTimeout(myvar);
+                        }
+                        myvar = setTimeout(function(){
+                            go();
+                        }, 11000);
                     </script>
                         <div class="text-center" id="countdown"></div>
-                                        
+                        <button class="btn btn-primary center" onclick="go()">Đi đến liên kết</button>            
                     </div>
                     </div>
                     ';
