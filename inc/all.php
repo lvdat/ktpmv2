@@ -15,11 +15,7 @@ function login(){
     if(isset($_SESSION['logged'])){
         $mssv = $_SESSION['logged'];
         $sql = "SELECT * FROM dssv WHERE mssv = '$mssv'";
-        if($conn->query($sql)->num_rows > 0){
-            return true;
-        }else{
-            return false;
-        }
+        return ($conn->query($sql)->num_rows > 0);
     }else{
         return false;
     }

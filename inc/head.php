@@ -78,13 +78,16 @@ if(login()){
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/" title="Trang chủ"><i class="fas fa-home"></i> Trang chủ</a>
+                    <a class="nav-link" aria-current="page" href="/" title="Trang chủ"><i class="fas fa-home"></i> Trang chủ</a>
                 </li>
                 <li class="nav-item">
-                <a target="_blank" class="nav-link" style="cursor: pointer" onclick="codetrain()" title="CodeTrain - Luyện lập trình trực tuyến"><i class="fas fa-code"></i> Luyện lập trình</a>
+                    <a target="_blank" class="nav-link" style="cursor: pointer" onclick="codetrain()" title="CodeTrain - Luyện lập trình trực tuyến"><i class="fas fa-code"></i> Luyện lập trình</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="/chat" title="Phòng trò chuyện"><i class="fas fa-comments"></i> Phòng trò chuyện</a>
+                    <a class="nav-link" href="/chat" title="Phòng trò chuyện"><i class="fas fa-comments"></i> Phòng trò chuyện</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/lvdat/ktpmv2" title="Mã nguồn web trên Github"><i class="fab fa-github"></i> Github</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
